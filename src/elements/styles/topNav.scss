@@ -1,0 +1,74 @@
+.top-nav-container {
+    width: 95%;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border: 0.3px solid gray;
+    border-radius: 50px;
+    margin: 20px auto;
+    padding: 10px;
+
+    .list-items {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        gap: 20px;
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+
+        li {
+            list-style: none;
+
+            svg {
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+    .profile-container {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        
+        span {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .profile {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: blue;
+            border: 0.5px solid blue;
+            flex-shrink: 0;
+        }
+
+        .profile-hide {
+            display: none;
+        }
+
+        .details {
+            position: absolute;
+            background: rgba(255, 255, 255, 5);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            top: 60px;
+            right: 0;
+            padding: 15px;
+            border-radius: 7px;
+            border: 0.5px solid black;
+            box-shadow: 5px 5px 0 black;
+
+            li {
+                margin: 10px 0;
+            }
+        }
+    }
+}
