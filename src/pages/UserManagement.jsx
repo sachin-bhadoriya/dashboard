@@ -1,8 +1,15 @@
+import Table from '../components/Table'
 import TopNav from '../elements/TopNav'
 
 const UserManagement = () => {
   return (
-    <div><TopNav/>UserManagement</div>
+    <>
+      <TopNav />
+      <div style={{ padding: "20px", margin: "20px", border: "0.3px solid rgba(128, 128, 128, 0.4)", borderRadius: "10px" }}>
+        <h3>User Management</h3>
+        <Table />
+      </div>
+    </>
   )
 }
 

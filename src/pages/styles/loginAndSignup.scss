@@ -1,0 +1,116 @@
+.login-and-signup-page-container {
+    display: grid;
+    height: 100%;
+    place-content: center;
+    width: 100dvw;
+    min-height: 100dvh;
+    background: linear-gradient(250deg, #02024a, #0c0c83);
+    padding: 10px 0;
+    position: relative;
+
+    .animate-box {
+        position: absolute;
+        width: 20px;
+        aspect-ratio: 1/1;
+        background-color: white;
+        animation: rotate 5s linear infinite;
+    }
+
+    @keyframes rotate {
+        0% {
+            top: 0;
+            left: 0;
+        }
+
+        50% {
+            top: 0;
+            left: 90%;
+        }
+
+        75% {
+            top: 90%;
+            left: 90%;
+        }
+
+        100% {
+            top: 90%;
+            left: 0;
+        }
+    }
+
+    .login-form-container,
+    .signup-form-container {
+        display: grid;
+        height: 100%;
+        place-content: center;
+        width: 100%;
+
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            width: clamp(300px, 80dvw, 400px);
+            padding: 20px;
+            margin: auto;
+            border: 0.3px solid #aaa;
+            background: white;
+            border-radius: 10px;
+
+            img {
+                margin: 50px auto;
+            }
+
+            .password-input-container {
+                position: relative;
+
+                svg {
+                    position: absolute;
+                    bottom: 15px;
+                    right: 20px;
+                    cursor: pointer;
+                }
+
+                input {
+                    width: 100%;
+                    padding-right: 45px;
+                }
+            }
+
+
+            input,
+            button {
+                padding: 10px;
+                border-radius: 5px;
+                outline: none;
+                border: 0.3px solid #aaa;
+                margin-bottom: 5px;
+            }
+
+            label {
+                margin: 5px 0;
+            }
+
+            button {
+                background-color: #0c0c83;
+                color: white;
+                font-weight: 700;
+                font-size: 18px;
+                margin-top: 10px;
+                cursor: pointer;
+            }
+
+            .bottom-line {
+                font-size: 13px;
+                text-align: center;
+                margin-top: 5px;
+
+                .signup-button {
+                    color: blue;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+}

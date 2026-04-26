@@ -1,0 +1,46 @@
+.table-main-container {
+
+    .search-container {
+        padding: 10px;
+        display: flex;
+        justify-content: end;
+
+        input {
+            padding: 10px;
+            width: 100%;
+            max-width: 400px;
+            border: 0.3px solid rgba(128, 128, 128, 0.7);
+            border-radius: 5px;
+            outline: none;
+        }
+    }
+
+    table {
+        cursor: pointer;
+        border: 0.3px solid rgb(180, 56, 56);
+        border-collapse: collapse;
+        border-radius: 5px;
+        overflow: hidden;
+        width: 100%;
+
+        th {
+            background-color: blue;
+            color: white;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: start;
+        }
+
+
+        tr:nth-child(even) {
+            background-color: rgba(128, 128, 128, 0.2);
+        }
+
+        tr:hover {
+            background-color: rgba(128, 128, 128, 0.3);
+        }
+    }
+}

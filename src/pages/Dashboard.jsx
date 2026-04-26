@@ -1,3 +1,6 @@
+import "../assets/chartConfig"
+
+import { Line } from "react-chartjs-2";
 import "./styles/dashboard.scss"
 import TopNav from "../elements/TopNav"
 import DisplayCard from "../components/DisplayCard"
@@ -6,6 +9,7 @@ import { FaUserAlt } from "react-icons/fa";
 import { PiCardsFill } from "react-icons/pi";
 
 const Dashboard = () => {
+
 
   function getStatusStyle(style) {
     return {
@@ -22,6 +26,69 @@ const Dashboard = () => {
     { orderId: "OI157141", customerName: "Sachin Bhadoriya", status: "Completed", amount: "1,250" },
     { orderId: "OI157141", customerName: "Sachin Bhadoriya", status: "Completed", amount: "1,250" }
   ]
+
+  const salesData = [
+    { year: 2010, count: 10 },
+    { year: 2011, count: 20 },
+    { year: 2012, count: 15 },
+    { year: 2013, count: 25 },
+    { year: 2014, count: 22 },
+    { year: 2015, count: 30 },
+    { year: 2016, count: 28 }
+  ]
+
+  const options = {
+    responsive: true,
+
+    plugins: {
+      legend: {
+        position: "bottom",
+      },
+    },
+
+    scales: {
+      y: {
+        beginAtZero: true,
+        min: 0,
+        max: 50,
+
+        ticks: {
+          stepSize: 2,
+          color: "#555",
+          font: {
+            size: 12,
+          },
+        },
+
+        grid: {
+          color: "#eee",
+        },
+
+        title: {
+          display: true,
+          text: "Users",
+          color: "#333",
+          font: {
+            size: 14,
+          },
+        },
+      },
+    },
+  };
+
+  const chartStructure = {
+    labels: salesData.map(item => item.year),
+    datasets: [
+      {
+        label: "Sales Overview",
+        data: salesData.map(item => item.count),
+        backgroundColor: "rgba(54, 162, 235, 0.3)",
+        borderColor: "blue",
+        borderWidth: 1,
+      },
+    ],
+  };
+
 
 
   return (
@@ -40,7 +107,10 @@ const Dashboard = () => {
 
         <div className="data-graph-and-table-container">
           <div className="sales-overview-container">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae commodi voluptas ratione, molestiae aperiam explicabo quaerat dicta ad amet sapiente.
+            <h3>Sales Overview ( Last 7 Days )</h3>
+            <div className="sales-chart-container">
+              <Line data={chartStructure} options={options} />
+            </div>
           </div>
           <div className="recent-order-container">
             <table>
@@ -65,6 +135,7 @@ const Dashboard = () => {
             </table>
           </div>
         </div>
+        
       </div>
     </>
   )

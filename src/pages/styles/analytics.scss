@@ -1,0 +1,50 @@
+.analytics-main-container {
+    width: 100%;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1.7fr 1.3fr;
+    grid-template-areas:
+        "monthlySales monthlyRevenue"
+        "topProducts monthlyRevenue";
+    padding: 20px;
+    box-sizing: border-box;
+    
+            h3 {
+                font-size: 1.4rem;
+                margin-bottom: 20px;
+                font-weight: 800;
+            }
+
+    .monthly-sales-container {
+        grid-area: monthlySales;
+        border: 0.3px solid rgba(128, 128, 128, 0.4);
+        border-radius: 10px;
+        padding: 20px;
+    }
+
+    .monthly-revenue-container {
+        height: fit-content;
+        border: 0.3px solid rgba(128, 128, 128, 0.4);
+        border-radius: 10px;
+        grid-area: monthlyRevenue;
+        padding: 20px;
+    }
+
+    .top-products-container {
+        grid-area: topProducts;
+        border: 0.3px solid rgba(128, 128, 128, 0.4);
+        border-radius: 10px;
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .analytics-main-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "monthlySales"
+            "monthlyRevenue"
+            "topProducts";
+    }
+}

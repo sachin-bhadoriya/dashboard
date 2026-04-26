@@ -25,7 +25,7 @@ const TopNav = () => {
                     <div className="profile">
                     </div>
 
-                    <span onClick={profileToggle}><IoChevronDownOutline /></span>
+                    <span style={{ transition: "all 0.3s ease", transform: isProfileShow ? "rotate(180deg)" : null }} onClick={profileToggle}><IoChevronDownOutline /></span>
 
                     <ul className={`details  ${isProfileShow ? "" : "profile-hide"}`}>
                         <li>Sachin Bhadoriya</li>

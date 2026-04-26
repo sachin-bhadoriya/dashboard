@@ -1,11 +1,12 @@
 import { useState } from "react";
 import "./styles/sideBar.scss"
 import { Link, Outlet } from "react-router-dom";
-import { RiMenu3Fill, RiDashboardFill } from "react-icons/ri";
+import { RiDashboardFill } from "react-icons/ri";
 import { MdAnalytics, MdShoppingCart } from "react-icons/md";
 import { FaUser } from "react-icons/fa";
 import { AiFillProduct } from "react-icons/ai";
 import { IoSettingsSharp } from "react-icons/io5";
+import { LuListCollapse } from "react-icons/lu";
 
 const SideBar = () => {
   const [isBarOpen, setIsBarOpen] = useState(true)
@@ -19,10 +20,10 @@ const SideBar = () => {
       <div className='sidebar-container'>
         <div className="header">
           <h1 className="logo">Admin Pannel</h1>
-          <div className="menu-icon" onClick={handleBarToggle}><RiMenu3Fill /></div>
+          <div className="menu-icon" style={{ transform: isBarOpen ? "rotate(180deg)" : null, transition: "all 0.3s ease" }} onClick={handleBarToggle}><LuListCollapse /></div>
         </div>
         <div className="links">
-          
+
           <Link to="dashboard"><li>
             <RiDashboardFill />
             <span>Dashboard</span>

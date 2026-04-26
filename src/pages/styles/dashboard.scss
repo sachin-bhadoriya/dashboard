@@ -19,12 +19,28 @@
             border: 0.3px solid rgba(128, 128, 128, 0.4);
             border-radius: 10px;
             overflow: hidden;
+            min-height: 200px;
+
+            h3{
+                font-size: 1.6rem;
+                color: rgb(47, 47, 47);
+                font-weight: 800;
+            }
+
+            .sales-chart-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+                width: 100%;
+            }
         }
 
         .recent-order-container {
             border: 0.3px solid rgba(128, 128, 128, 0.4);
             border-radius: 10px;
             overflow-y: hidden;
+            height: fit-content;
 
             table {
                 cursor: pointer;

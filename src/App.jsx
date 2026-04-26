@@ -7,11 +7,13 @@ import UserManagement from './pages/UserManagement'
 import NotFound from './pages/NotFound'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import SideBar from './elements/SideBar'
+import LoginAndSignup from './pages/LoginAndSignup'
 
 const App = () => {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path='/' element={<LoginAndSignup />} />
         <Route path='/' element={<SideBar />} >
           <Route index path='/dashboard' element={<Dashboard />} />
           <Route path='/analytics' element={<Analytics />} />
