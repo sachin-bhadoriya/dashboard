@@ -1,12 +1,15 @@
+import { Suspense, lazy } from "react"
 import "../assets/chartConfig"
-
-import { Line } from "react-chartjs-2";
 import "./styles/dashboard.scss"
 import TopNav from "../elements/TopNav"
-import DisplayCard from "../components/DisplayCard"
+// import DisplayCard from "../components/DisplayCard"
 import { MdBorderColor, MdOutlineCurrencyRupee } from "react-icons/md";
 import { FaUserAlt } from "react-icons/fa";
 import { PiCardsFill } from "react-icons/pi";
+import Loading from "../components/Loading";
+import { Line } from "react-chartjs-2";
+// const Line = lazy(() => import("react-chartjs-2"))
+const DisplayCard = lazy(() => import("../components/DisplayCard"))
 
 const Dashboard = () => {
 
@@ -99,17 +102,27 @@ const Dashboard = () => {
         <h1>Hello, Admin!</h1>
 
         <div className="main-number-hero">
-          <DisplayCard heading="Total Orders" number="1,250" icon={<MdBorderColor></MdBorderColor>} />
-          <DisplayCard heading="Total Revenue" number="45,320" icon={<MdOutlineCurrencyRupee></MdOutlineCurrencyRupee>} />
-          <DisplayCard heading="Total Users" number="320" icon={<FaUserAlt></FaUserAlt>} />
-          <DisplayCard heading="Total Products" number="94" icon={<PiCardsFill></PiCardsFill>} />
+          <Suspense fallback={<Loading />}>
+            <DisplayCard heading="Total Orders" number="1,250" icon={<MdBorderColor />} />
+          </Suspense>
+          <Suspense fallback={<Loading />}>
+            <DisplayCard heading="Total Revenue" number="45,320" icon={<MdOutlineCurrencyRupee />} />
+          </Suspense>
+          <Suspense fallback={<Loading />}>
+            <DisplayCard heading="Total Users" number="320" icon={<FaUserAlt />} />
+          </Suspense>
+          <Suspense fallback={<Loading />}>
+            <DisplayCard heading="Total Products" number="94" icon={<PiCardsFill />} />
+          </Suspense>
         </div>
 
         <div className="data-graph-and-table-container">
           <div className="sales-overview-container">
             <h3>Sales Overview ( Last 7 Days )</h3>
             <div className="sales-chart-container">
-              <Line data={chartStructure} options={options} />
+              {/* <Suspense fallback={<Loading />}> */}
+                <Line data={chartStructure} options={options} />
+              {/* </Suspense> */}
             </div>
           </div>
           <div className="recent-order-container">
@@ -135,7 +148,7 @@ const Dashboard = () => {
             </table>
           </div>
         </div>
-        
+
       </div>
     </>
   )
